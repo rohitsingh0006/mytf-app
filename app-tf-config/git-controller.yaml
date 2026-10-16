@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: app-tf-dev
+  namespace: flux-system
+spec:
+  interval: 1m
+  url: https://github.com/rohitsingh0006/app-tf-dev.git
+  ref:
+    branch: main

@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app1-tf-app
+  namespace: argocd
+spec:
+  project: app1-tf-project
+  source:
+    repoURL: https://github.com/rohitsingh0006/app-tf-dev.git
+    targetRevision: HEAD
+    path: .
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: app1-tf
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

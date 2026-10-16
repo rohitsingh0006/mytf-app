@@ -1,0 +1,16 @@
+apiVersion: infra.contrib.fluxcd.io/v1alpha2
+kind: Terraform
+metadata:
+  name: azure-rg
+  namespace: flux-system
+
+spec:
+  interval: 5m
+
+  approvePlan: auto
+
+  path: "."
+
+  sourceRef:
+    kind: GitRepository
+    name: app-tf-dev
